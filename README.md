@@ -6,7 +6,7 @@ A slightly more efficient bitwise operations that exploit floating-point errors
 
 ## Usage
 
-See [and.mcfunction](https://github.com/Triton365/fast_bitwise_and/blob/main/and.mcfunction)
+See [and.mcfunction](https://github.com/Triton365/fast_bitwise_ops/blob/main/and.mcfunction)
 
 Make sure you put this part to your `#minecraft:load`.
 
@@ -85,4 +85,4 @@ scoreboard players get #output bitwise
 
 # Benchmark
 
-See [benchmark branch](https://github.com/Triton365/fast_bitwise_and/tree/benchmark)
+See [benchmark branch](https://github.com/Triton365/fast_bitwise_ops/tree/benchmark)
