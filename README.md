@@ -1,6 +1,6 @@
 # fast_bitwise_ops
 
-A slightly more efficient bitwise operations that exploit floating-point errors
+A slightly more efficient bitwise operations using floating-point errors
 
 <br><br>
 
