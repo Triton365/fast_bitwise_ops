@@ -1,4 +1,5 @@
 scoreboard objectives add fast_bitwise dummy
+scoreboard players set #-2 fast_bitwise -2
 data modify storage fast_bitwise: Pos set value [0d,0d,0d]
 execute in overworld run forceload add 0 0
 # ↓ It must be a marker and not contain any data, otherwise it can cause performance drop

@@ -57,4 +57,56 @@ with open('nor.mcfunction','w',encoding='utf-8') as f:
         f.write(f' positioned ~ ~{st(2**(x+53) - 2**x)} ~{st(2**(x+53) - 2**x)} facing ~ ~-{st(2*2**x)} ~-{st(2*2**x)} positioned ^ ^ ^-{st(2**x)} \\\n')
     f.write(write_end)
 
+with open('xor.mcfunction','w',encoding='utf-8') as f:
+    f.write(write_start)
+    for x in range(-29,-28):
+        f.write(f' positioned -{st(2**-29)} ~{st(2**25 + 2**6)} ~{st(2**25 + 2**6)} facing ~ ~-{st(2**-28)} ~-{st(2**-28)} positioned ^ ^ ^-{st(2**-29)} \\\n')
+    for x in range(-28,1):
+        f.write(f' positioned ~ ~{st(2**(x+53) - 2**x)} ~{st(2**(x+53) - 2**x)} facing ~ ~-{st(2*2**x)} ~-{st(2*2**x)} positioned ^ ^ ^-{st(2**x)} \\\n')
+    for x in range(1,2):
+        f.write(f' positioned ~ ~{st(2**(x+53) - 2**x)} ~{st(2**(x+53) - 2**x)} facing ~ ~-{st(2*2**x)} ~-{st(2*2**x)} positioned ^ ^ ^{st(2**x)} \\\n')
+    f.write(''' run tp 6c74a784-d1ff-ae5d-d955-00b1bccd34b1 ~ 0 0.
+execute store result score #output fast_bitwise run data get entity 6c74a784-d1ff-ae5d-d955-00b1bccd34b1 Pos[0] 1073741824
+scoreboard players operation #output fast_bitwise -= #input1 fast_bitwise
+scoreboard players operation #output fast_bitwise -= #input2 fast_bitwise
+
+# OUTPUT: scoreboard players get #output fast_bitwise
+''')
+
+with open('xnor.mcfunction','w',encoding='utf-8') as f:
+    f.write(write_start)
+    for x in range(-29,-28):
+        f.write(f' positioned {st(2**-30)} ~{st(2**25 + 2**6)} ~{st(2**25 + 2**6)} facing ~ ~-{st(2**-28)} ~-{st(2**-28)} positioned ^ ^ ^{st(2**-29)} \\\n')
+    for x in range(-28,1):
+        f.write(f' positioned ~ ~{st(2**(x+53) - 2**x)} ~{st(2**(x+53) - 2**x)} facing ~ ~-{st(2*2**x)} ~-{st(2*2**x)} positioned ^ ^ ^{st(2**x)} \\\n')
+    for x in range(1,2):
+        f.write(f' positioned ~ ~{st(2**(x+53) - 2**x)} ~{st(2**(x+53) - 2**x)} facing ~ ~-{st(2*2**x)} ~-{st(2*2**x)} positioned ^ ^ ^-{st(2**x)} \\\n')
+    f.write(''' run tp 6c74a784-d1ff-ae5d-d955-00b1bccd34b1 ~ 0 0.
+execute store result score #output fast_bitwise run data get entity 6c74a784-d1ff-ae5d-d955-00b1bccd34b1 Pos[0] 1073741824
+scoreboard players operation #output fast_bitwise += #input1 fast_bitwise
+scoreboard players operation #output fast_bitwise += #input2 fast_bitwise
+
+# OUTPUT: scoreboard players get #output fast_bitwise
+''')
+
 print('end')
+
+'''
+
+(NOT A) = (-A) - 1
+(-A) = (NOT A) + 1
+
+(A+B) = (A OR B) + (A AND B)
+(A OR B) = (A+B) - (A AND B)
+(A AND B) = (A+B) - (A OR B)
+
+(A XOR B) = (A OR B) - (A AND B)
+(A XOR B) = (A+B) - 2*(A AND B)
+(A XOR B) = 2*(A OR B) - (A+B)
+
+(A XNOR B) = (A AND B) + (A NOR B)
+(A XNOR B) = (A+B) + 2*(A NOR B) + 1
+(A XNOR B) = (A+B) - 2*(A OR B) - 1
+(A XNOR B) = 2*(A AND B) - (A+B) - 1
+
+'''
