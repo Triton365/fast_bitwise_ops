@@ -2,7 +2,7 @@
 
 A slightly more efficient bitwise "AND" operation that exploits floating-point errors
 
-<br><br><br>
+<br><br>
 
 ## Usage
 
