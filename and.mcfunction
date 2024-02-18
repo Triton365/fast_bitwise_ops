@@ -49,7 +49,7 @@ execute at 6c74a784-d1ff-ae5d-d955-00b1bccd34b1 \
  positioned ~ ~9007199254740989 ~9007199254740989 facing ~ ~-2 ~-2 positioned ^ ^ ^1 \
  positioned ~ ~18014398509481978 ~18014398509481978 facing ~ ~-4 ~-4 positioned ^ ^ ^2 \
  positioned ~ ~36028797018963956 ~36028797018963956 facing ~ ~-8 ~-8 positioned ^ ^ ^-4 \
- run tp 6c74a784-d1ff-ae5d-d955-00b1bccd34b1 ~ 0 0. ~ ~
+ run tp 6c74a784-d1ff-ae5d-d955-00b1bccd34b1 ~ 0 0.
 execute store result score #output bitwise run data get entity 6c74a784-d1ff-ae5d-d955-00b1bccd34b1 Pos[0] 536870912
 
 # OUTPUT: scoreboard players get #output bitwise
