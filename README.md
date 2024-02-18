@@ -40,6 +40,8 @@ scoreboard players operation #input1 bitwise -= #output bitwise
 scoreboard players get #input1 bitwise
 ```
 
+<br>
+
 ### XOR(^)
 
 A+B = 2*(A&B) + (A^B)
@@ -55,6 +57,8 @@ scoreboard players operation #input1 bitwise -= #output bitwise
 scoreboard players operation #input1 bitwise -= #output bitwise
 scoreboard players get #input1 bitwise
 ```
+
+<br>
 
 ### NOT(~)
 
