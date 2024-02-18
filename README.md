@@ -1,6 +1,6 @@
-# fast_bitwise_and
+# fast_bitwise_ops
 
-A slightly more efficient bitwise "AND" operation that exploits floating-point errors
+A slightly more efficient bitwise operations that exploit floating-point errors
 
 <br><br>
 
@@ -18,7 +18,7 @@ execute in overworld run forceload add 0 0
 execute in overworld run summon marker 0. 0 0. {UUID:[I;1819584388,-771772835,-648740687,-1127402319]}
 ```
 
-The function takes two scores as input, `#input1 bitwise` and `#input2 bitwise`, and it outputs the `AND` of those two to the `#output bitwise`.
+The `and` function takes two scores as input, `#input1 bitwise` and `#input2 bitwise`, and it outputs the `AND` of those two to the `#output bitwise`.
 
 ```mcfunction
 scoreboard players set #input1 bitwise <INPUT1>
@@ -29,11 +29,7 @@ scoreboard players get #output bitwise
 
 The two inputs remain unchanged after the function call, you can use them freely.
 
-<br><br><br>
-
-## Other operations
-
-Other bitwise operators can be easily implemented with a few extra scoreboard operations.
+Other bitwise operations are not currently implemented, but these can be easily done with a few additional scoreboard operations.
 
 <br>
 
@@ -69,8 +65,6 @@ scoreboard players get #input1 bitwise
 <br>
 
 ### NOT(~)
-
-This isn't actually related to the `AND` operation, but just in case.
 
 `NOT A = -A - 1`
 
