@@ -8,7 +8,7 @@ A slightly more efficient bitwise "AND" operation that exploits floating-point e
 
 See [and.mcfunction](https://github.com/Triton365/fast_bitwise_and/blob/main/and.mcfunction)
 
-Make sure you put this `LOAD` part to your `#minecraft:load`.
+Make sure you put this part to your `#minecraft:load`.
 
 ```mcfunction
 scoreboard objectives add bitwise dummy
