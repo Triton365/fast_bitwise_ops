@@ -4,6 +4,7 @@ A slightly more efficient bitwise "AND" operation that exploits floating-point e
 
 
 
+
 ## Usage
 
 See (and.mcfunction)[https://github.com/Triton365/fast_bitwise_and/blob/main/and.mcfunction]
@@ -20,6 +21,7 @@ scoreboard players get #output bitwise
 ```
 
 * Make sure you put the `LOAD` part to your `#minecraft:load`.
+
 
 
 
@@ -72,6 +74,7 @@ A NAND B = NOT(A AND B)
 A NOR B = NOT(A OR B)
 
 A XNOR B = NOT(A XOR B)
+
 
 
 
