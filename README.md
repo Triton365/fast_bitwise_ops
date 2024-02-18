@@ -33,11 +33,11 @@ The two inputs remain unchanged after the function call, you can use them freely
 
 ## Other operations
 
+Other bitwise operators can be easily implemented with a few extra scoreboard operations.
+
 ### OR(|)
 
-A+B = (A&B) + (A|B)
-
-A|B = A + B - (A&B)
+A OR B = A + B - (A AND B)
 
 ```mcfunction
 scoreboard players set #input1 bitwise <A>
@@ -52,9 +52,7 @@ scoreboard players get #input1 bitwise
 
 ### XOR(^)
 
-A+B = 2*(A&B) + (A^B)
-
-A^B = A + B - 2*(A&B)
+A XOR B = A + B - 2*(A AND B)
 
 ```mcfunction
 scoreboard players set #input1 bitwise <A>
@@ -70,7 +68,7 @@ scoreboard players get #input1 bitwise
 
 ### NOT(~)
 
-~A = -A - 1
+NOT A = -A - 1
 
 ```mcfunction
 scoreboard players set #input1 bitwise <A>
