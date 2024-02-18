@@ -2,10 +2,7 @@
 
 A slightly more efficient bitwise "AND" operation that exploits floating-point errors
 
-
-
-
-
+<br><br><br>
 
 ## Usage
 
@@ -24,10 +21,7 @@ scoreboard players get #output bitwise
 
 * Make sure you put the `LOAD` part to your `#minecraft:load`.
 
-
-
-
-
+<br><br><br>
 
 ## Other operations
 
@@ -79,10 +73,7 @@ A NOR B = NOT(A OR B)
 
 A XNOR B = NOT(A XOR B)
 
-
-
-
-
+<br><br><br>
 
 # Benchmark
 
