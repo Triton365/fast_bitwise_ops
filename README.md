@@ -39,7 +39,7 @@ Other bitwise operators can be easily implemented with a few extra scoreboard op
 
 ### OR(|)
 
-A OR B = A + B - (A AND B)
+`A OR B = A + B - (A AND B)`
 
 ```mcfunction
 scoreboard players set #input1 bitwise <A>
@@ -54,7 +54,7 @@ scoreboard players get #input1 bitwise
 
 ### XOR(^)
 
-A XOR B = A + B - 2*(A AND B)
+`A XOR B = A + B - 2*(A AND B)`
 
 ```mcfunction
 scoreboard players set #input1 bitwise <A>
@@ -70,7 +70,9 @@ scoreboard players get #input1 bitwise
 
 ### NOT(~)
 
-NOT A = -A - 1
+This isn't actually related to the `AND` operation, but just in case.
+
+`NOT A = -A - 1`
 
 ```mcfunction
 scoreboard players set #input1 bitwise <A>
@@ -79,11 +81,11 @@ scoreboard players operation #output -= #input1 bitwise
 scoreboard players get #output bitwise
 ```
 
-A NAND B = NOT(A AND B)
+`A NAND B = NOT(A AND B)`
 
-A NOR B = NOT(A OR B)
+`A NOR B = NOT(A OR B)`
 
-A XNOR B = NOT(A XOR B)
+`A XNOR B = NOT(A XOR B)`
 
 <br><br><br>
 
