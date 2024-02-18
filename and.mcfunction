@@ -8,7 +8,7 @@
 
 
 
-# INPUT : {
+# INPUT: {
 #     scoreboard players set #input1 bitwise <INPUT1>
 #     scoreboard players set #input1 bitwise <INPUT2>
 # }
@@ -52,4 +52,4 @@ execute at 6c74a784-d1ff-ae5d-d955-00b1bccd34b1 \
  run tp 6c74a784-d1ff-ae5d-d955-00b1bccd34b1 ~ 0 0. ~ ~
 execute store result score #output bitwise run data get entity 6c74a784-d1ff-ae5d-d955-00b1bccd34b1 Pos[0] 536870912
 
-# OUTPUT : scoreboard players get #output bitwise
+# OUTPUT: scoreboard players get #output bitwise
