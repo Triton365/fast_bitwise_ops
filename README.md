@@ -35,6 +35,8 @@ The two inputs remain unchanged after the function call, you can use them freely
 
 Other bitwise operators can be easily implemented with a few extra scoreboard operations.
 
+<br>
+
 ### OR(|)
 
 A OR B = A + B - (A AND B)
