@@ -6,7 +6,7 @@ A slightly more efficient bitwise "AND" operation that exploits floating-point e
 
 ## Usage
 
-See (and.mcfunction)[https://github.com/Triton365/fast_bitwise_and/blob/main/and.mcfunction]
+See [and.mcfunction](https://github.com/Triton365/fast_bitwise_and/blob/main/and.mcfunction)
 
 The function takes two scores as input, `#input1 bitwise` and `#input2 bitwise`, and it outputs the `AND` of those two to the `#output bitwise`.
 
@@ -77,4 +77,4 @@ A XNOR B = NOT(A XOR B)
 
 # Benchmark
 
-See (benchmark branch)[https://github.com/Triton365/fast_bitwise_and/tree/benchmark]
+See [benchmark branch](https://github.com/Triton365/fast_bitwise_and/tree/benchmark)
