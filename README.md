@@ -6,7 +6,9 @@ A slightly more efficient bitwise operations that exploit floating-point errors
 
 ## Usage
 
-The `and`,`or`,`xor`,`nand`,`nor`,`xnor` functions take two scores as input, `#input1 fast_bitwise` and `#input2 fast_bitwise`, apply its operation to these two, and store the output to the `#output fast_bitwise`.
+There are 6 available functions, `and`,`or`,`xor`,`nand`,`nor`,`xnor`.
+
+They take two scores as input, `#input1 fast_bitwise` and `#input2 fast_bitwise`, and store the output to the `#output fast_bitwise`.
 
 ```mcfunction
 scoreboard players set #input1 fast_bitwise <INPUT1>
