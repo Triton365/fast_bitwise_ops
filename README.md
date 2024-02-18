@@ -6,56 +6,27 @@ A slightly more efficient bitwise operations that exploit floating-point errors
 
 ## Usage
 
-See [and.mcfunction](https://github.com/Triton365/fast_bitwise_ops/blob/main/and.mcfunction)
-
-Make sure you put this part to your `#minecraft:load`.
+The `and`,`or`,`nand`,`nor` functions take two scores as input, `#input1 fast_bitwise` and `#input2 fast_bitwise`, apply its operation to these two, and store the output to the `#output fast_bitwise`.
 
 ```mcfunction
-scoreboard objectives add bitwise dummy
-data modify storage bitwise: Pos set value [0d,0d,0d]
-execute in overworld run forceload add 0 0
-# ↓ It must be a marker and not contain any data, otherwise it can cause performance drop
-execute in overworld run summon marker 0. 0 0. {UUID:[I;1819584388,-771772835,-648740687,-1127402319]}
+scoreboard players set #input1 fast_bitwise <INPUT1>
+scoreboard players set #input2 fast_bitwise <INPUT2>
+function fast_bitwise:(and|or|nand|nor)
+scoreboard players get #output fast_bitwise
 ```
 
-The `and` function takes two scores as input, `#input1 bitwise` and `#input2 bitwise`, and it outputs the `AND` of those two to the `#output bitwise`.
+These two inputs remain unchanged after the function call, so you can use them freely.
 
-```mcfunction
-scoreboard players set #input1 bitwise <INPUT1>
-scoreboard players set #input2 bitwise <INPUT2>
-function <and.mcfunction>
-scoreboard players get #output bitwise
-```
+`XOR`/`XNOR` operations are not currently implemented (or maybe impossible to implement), but these can be easily done with a few additional scoreboard operations.
 
-The two inputs remain unchanged after the function call, you can use them freely.
-
-Other bitwise operations are not currently implemented, but these can be easily done with a few additional scoreboard operations.
-
-<br>
-
-### OR(|)
-
-`A OR B = A + B - (A AND B)`
-
-```mcfunction
-scoreboard players set #input1 bitwise <A>
-scoreboard players set #input2 bitwise <B>
-function <and.mcfunction>
-scoreboard players operation #input1 bitwise += #input2 bitwise
-scoreboard players operation #input1 bitwise -= #output bitwise
-scoreboard players get #input1 bitwise
-```
-
-<br>
-
-### XOR(^)
+### XOR
 
 `A XOR B = A + B - 2*(A AND B)`
 
 ```mcfunction
 scoreboard players set #input1 bitwise <A>
 scoreboard players set #input2 bitwise <B>
-function <and.mcfunction>
+function fast_bitwise:and
 scoreboard players operation #input1 bitwise += #input2 bitwise
 scoreboard players operation #input1 bitwise -= #output bitwise
 scoreboard players operation #input1 bitwise -= #output bitwise
@@ -64,22 +35,20 @@ scoreboard players get #input1 bitwise
 
 <br>
 
-### NOT(~)
+### XNOR
 
-`NOT A = -A - 1`
+`A XNOR B = 2*(A AND B) - A - B - 1`
 
 ```mcfunction
 scoreboard players set #input1 bitwise <A>
-scoreboard players set #output bitwise -1
-scoreboard players operation #output -= #input1 bitwise
+scoreboard players set #input2 bitwise <B>
+function fast_bitwise:and
+scoreboard players operation #output bitwise += #output bitwise
+scoreboard players operation #output bitwise -= #input1 bitwise
+scoreboard players operation #output bitwise -= #input2 bitwise
+scoreboard players remove #output bitwise 1
 scoreboard players get #output bitwise
 ```
-
-`A NAND B = NOT(A AND B)`
-
-`A NOR B = NOT(A OR B)`
-
-`A XNOR B = NOT(A XOR B)`
 
 <br><br><br>
 
