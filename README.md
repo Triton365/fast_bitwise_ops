@@ -23,7 +23,7 @@ The floating-point-error method is always faster than the 96-scoreboard-ops meth
 
 Compared to 96-scoreboard-ops method, floating-point-error method is **1.255x faster** on average (random input), **1.118x faster** in the best case, and **1.491x faster** in the worst case.
 
-The use of the macro results in a **1.048x speedup** on caching successes, but a **1.062x slowdown** on caching failures. Considering the limited number of caching slots (only 8) and the wide range of input values (-2147483648 to 2147483647), the caching failure rate is expected to be very high, so I decided not to use the macros in the main repository.
+The use of the macro results in a **1.048x speedup** on cache hits, but a **1.062x slowdown** on cache misses. Considering the limited number of caching slots (only 8) and the wide range of input values (-2147483648 to 2147483647), the cache hit rate is expected to be extremely low, so I decided not to use the macros in the main repository.
 
 <br><br>
 
