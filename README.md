@@ -24,3 +24,5 @@ These two inputs remain unchanged after the function call, so you can use them f
 # Benchmark
 
 See [benchmark branch](https://github.com/Triton365/fast_bitwise_ops/tree/benchmark)
+
+On random input (or on average), the floating-point-error method is 1.255x faster than the traditional 96-scoreboard-ops method.
