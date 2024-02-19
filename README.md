@@ -25,7 +25,7 @@ The use of the macro results in a **1.048x speedup** on caching successes, but a
 
 ## Commands
 
-1.20.4 Vanila Server, void world with no players
+1.20.4 vanilla server, void world with no players
 
 Executed the 'tick sprint 100' command multiple times and selected the most appropriate result.
 
@@ -59,3 +59,11 @@ data modify storage fast_bitwise: function set value "v3/repeat_worst"
 data modify storage fast_bitwise: function set value "v4/repeat_worst"
 16.5ms
 ```
+
+<br><br><br>
+
+# Before 1.20.3
+
+In version 1.20.3, the command's overall speed has been reduced, which may change the performance of the two approaches. So I did some additional tests in 1.19.4.
+
+
