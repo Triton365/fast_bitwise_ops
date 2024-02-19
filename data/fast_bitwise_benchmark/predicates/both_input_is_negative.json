@@ -1,0 +1,30 @@
+[
+  {
+    "condition": "minecraft:value_check",
+    "value": {
+      "type": "minecraft:score",
+      "target": {
+        "type": "minecraft:fixed",
+        "name": "#input1"
+      },
+      "score": "fast_bitwise"
+    },
+    "range": {
+      "max": -1
+    }
+  },
+  {
+    "condition": "minecraft:value_check",
+    "value": {
+      "type": "minecraft:score",
+      "target": {
+        "type": "minecraft:fixed",
+        "name": "#input2"
+      },
+      "score": "fast_bitwise"
+    },
+    "range": {
+      "max": -1
+    }
+  }
+]

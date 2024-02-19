@@ -1,0 +1,1 @@
+$function fast_bitwise_benchmark:$(function)

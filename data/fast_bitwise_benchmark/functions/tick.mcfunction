@@ -1,0 +1,1 @@
+function fast_bitwise_benchmark:tick-1 with storage fast_bitwise:
