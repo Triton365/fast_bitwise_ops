@@ -23,6 +23,12 @@ The use of the macro results in a **1.048x speedup** on caching successes, but a
 
 <br><br>
 
+# Commands
+
+1.20.4 Vanila Server, void world with no players
+
+Executed the 'tick sprint 100' command multiple times and selected the most appropriate result.
+
 ```
 data modify storage fast_bitwise: function set value "v1/repeat_random"
 20.2ms
