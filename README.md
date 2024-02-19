@@ -19,7 +19,7 @@
 
 On random input (or on average), the floating-point-error method is **1.255x faster** than the 96-scoreboard-ops method.
 
-The use of the macro results in a 1.048x speedup on caching successes, but a 1.062x slowdown on caching failures. Considering the limited number of caching slots (only 8) and the wide range of input values (-2147483648 to 2147483647), the caching failure rate is expected to be very high, so I decided not to use the macros in the main repository.
+The use of the macro results in a **1.048x speedup** on caching successes, but a **1.062x slowdown** on caching failures. Considering the limited number of caching slots (only 8) and the wide range of input values (-2147483648 to 2147483647), the caching failure rate is expected to be very high, so I decided not to use the macros in the main repository.
 
 <br><br>
 
