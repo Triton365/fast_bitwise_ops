@@ -2,13 +2,15 @@
 
 Slightly more efficient bitwise operations using floating-point errors
 
+Recommended for use only with version **1.20.3 or later**. Using a version of 1.20.2 or lower may lead to reduced performance. See [benchmark branch](https://github.com/Triton365/fast_bitwise_ops/tree/benchmark) for further details.
+
 <br><br>
 
 ## Usage
 
 There are 6 available functions, `and`,`or`,`xor`,`nand`,`nor`,`xnor`.
 
-They take two scores as input, `#input1 fast_bitwise` and `#input2 fast_bitwise`, and return the output to the `#output fast_bitwise`.
+They take two scores as input, `#input1 fast_bitwise` and `#input2 fast_bitwise`, perform a 32-bit bitwise operation, and return the result to `#output fast_bitwise`.
 
 ```mcfunction
 scoreboard players set #input1 fast_bitwise <INPUT1>
@@ -25,6 +27,6 @@ These two inputs remain unchanged after the function call, so you are free to us
 
 See [benchmark branch](https://github.com/Triton365/fast_bitwise_ops/tree/benchmark)
 
-On random input (or on average), the floating-point-error method is **1.255x faster** than the traditional 96-scoreboard-ops method.
+On average (random input), the floating-point-error method is **1.255x faster** than the traditional 96-scoreboard-ops method.
 
 <br><br><br>
