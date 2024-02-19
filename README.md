@@ -2,6 +2,8 @@
 
 Slightly more efficient bitwise operations using floating-point errors
 
+Recommended for use only with version 1.20.3 or later. Using a version of 1.20.2 or lower may lead to reduced performance. See [benchmark branch](https://github.com/Triton365/fast_bitwise_ops/tree/benchmark) for further details.
+
 <br><br>
 
 ## Usage
