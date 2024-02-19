@@ -10,6 +10,8 @@
 
 ## Result
 
+1.20.4
+
 | Function | Random input | Best case | Worst Case |
 | --- | --- | --- | --- |
 | v1 | 20.2ms | 17.1ms | 24.0ms |
@@ -17,7 +19,9 @@
 | v3 | 16.1ms | 15.3ms | 16.1ms |
 | v4 | 17.1ms | 14.6ms | 17.1ms |
 
-On random input (or on average), the floating-point-error method is **1.255x faster** than the 96-scoreboard-ops method.
+The floating-point-error method is always faster than the 96-scoreboard-ops method for all types of inputs.
+
+Compared to 96-scoreboard-ops method, floating-point-error method is **1.255x faster** on average (random input), **1.118x faster** in the best case, and **1.491x faster** in the worst case.
 
 The use of the macro results in a **1.048x speedup** on caching successes, but a **1.062x slowdown** on caching failures. Considering the limited number of caching slots (only 8) and the wide range of input values (-2147483648 to 2147483647), the caching failure rate is expected to be very high, so I decided not to use the macros in the main repository.
 
@@ -39,7 +43,6 @@ data modify storage fast_bitwise: function set value "v3/repeat_random"
 data modify storage fast_bitwise: function set value "v4/repeat_random"
 17.1ms
 
-
 data modify storage fast_bitwise: function set value "v1/repeat_best"
 17.1ms
 data modify storage fast_bitwise: function set value "v2/repeat_best"
@@ -48,7 +51,6 @@ data modify storage fast_bitwise: function set value "v3/repeat_best"
 15.3ms
 data modify storage fast_bitwise: function set value "v4/repeat_best"
 14.6ms
-
 
 data modify storage fast_bitwise: function set value "v1/repeat_worst"
 24.0ms
@@ -64,6 +66,45 @@ data modify storage fast_bitwise: function set value "v4/repeat_worst"
 
 # Before 1.20.3
 
-In version 1.20.3, the command's overall speed has been reduced, which may change the performance of the two approaches. So I did some additional tests in 1.19.4.
+In version 1.20.3 the command's overall speed has been reduced, which may change the performance of the two approaches. So I did some additional tests in 1.19.4.
 
+1.19.4
 
+| Function | Random input | Best case | Worst Case |
+| --- | --- | --- | --- |
+| v1 | 16.8ms | 13.9ms | 20.4ms |
+| v2 | 21.5ms | 19.1ms | 24.6ms |
+| v3 | 17.4ms | 15.8ms | 17.4ms |
+
+Interestingly, compared to 96-scoreboard-ops method, floating-point-error method is **1.036x slower** on average (random input), **1.137x slower** in the best case, but **1.172x faster** in the worst case.
+
+<br><br>
+
+## Commands
+
+1.19.4 vanilla server, void world with no players
+
+Executed commands wtih the forceloaded repeating command block at `0 0 0`
+
+```
+data modify block 0 0 0 Command set value "function fast_bitwise_benchmark:v1/repeat_random"
+16.8ms
+data modify block 0 0 0 Command set value "function fast_bitwise_benchmark:v2/repeat_random"
+21.5ms
+data modify block 0 0 0 Command set value "function fast_bitwise_benchmark:v3/repeat_random"
+17.4ms
+
+data modify block 0 0 0 Command set value "function fast_bitwise_benchmark:v1/repeat_best"
+13.9ms
+data modify block 0 0 0 Command set value "function fast_bitwise_benchmark:v2/repeat_best"
+19.1ms
+data modify block 0 0 0 Command set value "function fast_bitwise_benchmark:v3/repeat_best"
+15.8ms
+
+data modify block 0 0 0 Command set value "function fast_bitwise_benchmark:v1/repeat_worst"
+20.4ms
+data modify block 0 0 0 Command set value "function fast_bitwise_benchmark:v2/repeat_worst"
+24.6ms
+data modify block 0 0 0 Command set value "function fast_bitwise_benchmark:v3/repeat_worst"
+17.4ms
+```
