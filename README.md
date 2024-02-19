@@ -13,7 +13,7 @@
 | Function | Random input | Best case | Worst Case |
 | --- | --- | --- | --- |
 | v1 | 20.2ms | 17.1ms | 24.0ms |
-| v2 | 21.7ms | 17.1ms | 24.8ms |
+| v2 | 21.7ms | 19.6ms | 24.8ms |
 | v3 | 16.1ms | 15.3ms | 16.1ms |
 | v4 | 17.1ms | 14.6ms | 17.1ms |
 
