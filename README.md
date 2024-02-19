@@ -1,4 +1,14 @@
-# Benchmark
+
+## Functions
+
+- [v1](https://github.com/Triton365/fast_bitwise_ops/blob/benchmark/data/fast_bitwise_benchmark/functions/v1/run.mcfunction) : Traditional 96-scoreboard-ops method
+- [v2](https://github.com/Triton365/fast_bitwise_ops/blob/benchmark/data/fast_bitwise_benchmark/functions/v2/run.mcfunction) : Traditional 96-scoreboard-ops method with predicate
+- [v3](https://github.com/Triton365/fast_bitwise_ops/blob/benchmark/data/fast_bitwise_benchmark/functions/v3/run.mcfunction) : Floating-point-error method
+- [v4](https://github.com/Triton365/fast_bitwise_ops/blob/benchmark/data/fast_bitwise_benchmark/functions/v4/run.mcfunction) : Floating-point-error method with macro
+
+<br><br>
+
+## Result
 
 | Function | Random input | Best case | Worst Case |
 | --- | --- | --- | --- |
@@ -6,6 +16,8 @@
 | v2 | 21.7ms | 17.1ms | 24.8ms |
 | v3 | 16.1ms | 15.3ms | 16.1ms |
 | v4 | 17.1ms | 14.6ms | 17.1ms |
+
+<br><br>
 
 ```
 data modify storage fast_bitwise: function set value "v1/repeat_random"
