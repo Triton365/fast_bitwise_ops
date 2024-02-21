@@ -2,6 +2,8 @@
 
 Slightly more efficient bitwise operations using floating-point errors
 
+Approximately **1.255x faster** than the traditional 96-scoreboard-ops method on average (random input)
+
 Recommended for use only with version **1.20.3 or later**. Using a version of 1.20.2 or lower may lead to reduced performance. See [benchmark branch](https://github.com/Triton365/fast_bitwise_ops/tree/benchmark) for further details.
 
 <br><br>
@@ -27,6 +29,5 @@ These two inputs remain unchanged after the function call, so you are free to us
 
 See [benchmark branch](https://github.com/Triton365/fast_bitwise_ops/tree/benchmark)
 
-On average (random input), the floating-point-error method is **1.255x faster** than the traditional 96-scoreboard-ops method.
 
 <br><br><br>
