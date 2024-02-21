@@ -11,10 +11,11 @@ operators = {
 }
 
 nums = []
-for x in range(-4,4):
-    x <<= 29
-    for y in range(8):
-        nums.append(x+y)
+for x in range(-2,2):
+    x <<= 30
+    for y in range(4):
+        for z in (0,0b0011_1111_1111_1111_1111_1111_1111_1100):
+            nums.append(x+y+z)
 
 for name,op in operators.items():
     with open(f'{name}.mcfunction','w') as f:
