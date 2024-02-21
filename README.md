@@ -8,6 +8,12 @@ Recommended for use only with version **1.20.3 or later**. Using a version of 1.
 
 <br><br>
 
+## Download
+
+<https://github.com/Triton365/fast_bitwise_ops/releases/download/v1.0.0/fast_bitwise_ops.zip>
+
+<br><br>
+
 ## Usage
 
 There are 6 available functions, `and`,`or`,`xor`,`nand`,`nor`,`xnor`.
