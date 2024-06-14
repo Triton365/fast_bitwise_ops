@@ -1,7 +1,7 @@
 
 # INPUT: {
 #     scoreboard players set #input1 fast_bitwise <INPUT1>
-#     scoreboard players set #input1 fast_bitwise <INPUT2>
+#     scoreboard players set #input2 fast_bitwise <INPUT2>
 # }
 
 execute store result storage fast_bitwise: Pos[1] double .000000007450580596923828125 run scoreboard players get #input1 fast_bitwise
